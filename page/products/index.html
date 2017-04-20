@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../../favicon.ico" />
+    <meta name="autor" content="Steven Puerto, stevenn2012.github.io, (+57)3015436823">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Parcial primer corte | Productos</title>
+	<script type="text/javascript" src="../../fr\jquery\1.9.1\jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../fr\bootstrap\3.3.7\js\bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../fr\bootstrap\3.3.7\css\bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="../../fr\bootstrap\3.3.7\css\bootstrap.min.css">
+	<script type="text/javascript" src="../../js/logicProducts.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="../../">Inicio</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a href="../categories/">Categorias <span class="sr-only">(current)</span></a></li>
+	        <li class="active"><a href="">Productos</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compras  <span id="cantProducts" class="red badge"></span><span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../car/"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Carrito <span id="cantProducts2" class="red badge"></a></li>
+	            <li><a id="realizarCompra">Realizar compra</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<section>
+		<div class="container">
+			<h1 class="title">Productos</h1>
+			<div class="filtro input-group">
+			 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+			  	<input type="text" class="filter form-control" placeholder="Buscar" aria-describedby="basic-addon1">
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-5 col-md-3 col-lg-2 fil">
+					<h3>Ordenar por:</h3>
+				    <div class="form-group">
+				    	<select id="OrdenList" class="form-control">
+				    		<option value="0">No ordenar</option>
+							<option value="1">Nombre</option>
+							<option value="2">Mayor precio</option>
+							<option value="3">Menor precio</option>
+						</select>
+				  	</div>
+
+					<h3>Filtrar por:</h3>
+					<div class="form-group">
+				    	<label for="exampleInputPassword1">Categoria:</label>
+				    	<select id="categoriesList" class="form-control">
+						</select>
+				  	</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Disponibilidad:</label>
+				    	<select id="dispList" class="form-control">
+				    		<option value="0">Todos</option>
+							<option value="true">Disponibles</option>
+							<option value="false">Agotados</option>
+						</select>
+				  	</div>
+				    <span class="input-group-addon">
+				        <input id="bestButton" type="checkbox" aria-label="...">
+				        <span>Más Vendidos</span>
+				    </span><br>
+				    <span class="input-group-addon">
+				        <input id="priceButton1" type="checkbox" aria-label="...">
+				        <span>Precio > $30.000</span>
+				    </span><br>
+				    <span class="input-group-addon">
+				        <input id="priceButton2" type="checkbox" aria-label="...">
+				        <span>Precio < $10.000</span>
+				    </span><br><br>
+				</div>
+				<div id="contenido" class="col-xs-12 col-sm-7 col-md-9 col-lg-10">
+					<div class="table-responsive" id="lista"></div>
+					<div id="msfind"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p class="footerText"><i>Page by <a href="https://stevenn2012.github.io">Steven Puerto</a></i></p>
+	</footer>
+</body>
+</html>

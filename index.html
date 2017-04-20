@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <meta name="autor" content="Steven Puerto, stevenn2012.github.io, (+57)3015436823">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Parcial primer corte | Inicio</title>
+	<script type="text/javascript" src="fr\jquery\1.9.1\jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="fr\bootstrap\3.3.7\js\bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="fr\bootstrap\3.3.7\css\bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="fr\bootstrap\3.3.7\css\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/indexStyle.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="active navbar-brand" href="../../">Inicio</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a href="page/categories/">Categorias <span class="sr-only">(current)</span></a></li>
+	        <li><a href="page/products/">Productos</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compras  <span id="cantProducts" class="red badge"></span><span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="page/car/"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Carrito <span id="cantProducts2" class="red badge"></a></li>
+	            <li><a id="realizarCompra">Realizar compra</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<section>
+		<div id="welcomePage">
+			<h1 id="title2">Bienvenido</h1>
+		</div>
+	</section>
+	<footer>
+		<p class="footerText"><i>Page by <a href="https://stevenn2012.github.io">Steven Puerto</a></i></p>
+	</footer>
+	<script type="text/javascript">  
+		if (typeof(Storage) !== "undefined") {
+			if (sessionStorage.carrito) {
+				var carrito = JSON.parse(sessionStorage.carrito);
+				if(carrito[0].cantidad == 0){
+					sessionStorage.removeItem('carrito');
+					$('#cantProducts').html('');
+					$('#cantProducts2').html('');
+				}else{
+					$('#cantProducts').html(carrito[0].cantidad);
+					$('#cantProducts2').html(carrito[0].cantidad);
+				}
+			}
+		}
+		$('#realizarCompra').click(function() {
+			sessionStorage.removeItem('carrito');
+			$('#cantProducts').html('');
+			$('#cantProducts2').html('');
+		});
+	</script>
+</body>
+</html>
